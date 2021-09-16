@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson2 - task 3</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  /**
+   *
+   * @param {Number} sum
+   * @returns {string}
+   */
+  function ruble(sum){
+    let ru1 = 'рубль', ru2 = 'рубля', ru5 = 'рублей';
+
+    let last_symbol = sum.toString().slice(-1),
+        last_two_symbols = sum.toString().slice(-2);
+
+    if(last_symbol === '1' && last_two_symbols !== '11')
+      return ru1;
+
+    if( (last_symbol === '2' && last_two_symbols !== '12') ||
+            (last_symbol === '3' && last_two_symbols !== '13') ||
+            (last_symbol === '4' && last_two_symbols !== '14') )
+      return ru2;
+
+    return ru5;
+  }
+
+  /**
+   *
+   * @param {Number} sum
+   * @returns {string}
+   */
+  function get_bank_notice(sum){
+    return `Ваша сумма в ${sum} ${ruble(sum)} успешно зачислена.`
+  }
+
+  alert(get_bank_notice(10525));
+  alert(get_bank_notice(10201));
+  alert(get_bank_notice(24543));
+  alert(get_bank_notice(211));
+
+
+</script>
+
+</body>
+</html>

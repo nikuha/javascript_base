@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson2 - task 3</title>
+</head>
+<body>
+<script src="task4_operations.js"></script>
+<script>
+  'use strict';
+
+  function mathOperation(arg1, arg2, operation){
+    switch (operation){
+      case 'Addition':
+        return Addition(arg1, arg2);
+      case 'Subtraction':
+        return Subtraction(arg1, arg2);
+      case 'Multiplication':
+        return Multiplication(arg1, arg2);
+      case 'Division':
+        return Division(arg1, arg2);
+      default:
+          throw new Error('Неверно выбранная операция!');
+    }
+  }
+
+  let a = -10, b = 58;
+
+  alert(`${a} + ${b} = ${mathOperation(a, b, 'Addition')}`);
+  alert(`${a} - ${b}  = ${mathOperation(a, b, 'Subtraction')}`);
+  alert(`${a} * ${b}  = ${mathOperation(a, b, 'Multiplication')}`);
+  alert(`${a} / ${b}  = ${mathOperation(a, b, 'Division')}`);
+
+
+</script>
+
+</body>
+</html>
