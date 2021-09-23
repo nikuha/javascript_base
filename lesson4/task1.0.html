@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson4 - task 1</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  function objectNumber(x){
+
+    let result = {
+      'units': 0,
+      'tens': 0,
+      'hundreds': 0,
+    }
+
+    if(isNaN(x)){
+      console.log('Неверное введено число');
+      return result;
+    }
+
+    if(parseInt(x) !== x){
+      console.log('Число должно быть целым');
+      return result;
+    }
+
+    if(x < 0 || x > 999){
+      console.log('Число вне диапазона [0-999]');
+      return result;
+    }
+
+    result.hundreds = Math.floor(x / 100);
+    result.units = x % 100;
+    result.tens = Math.floor(result.units / 10);
+    result.units %= 10;
+
+    return result;
+  }
+
+  console.log(objectNumber(+prompt('Введите число')));
+
+</script>
+
+</body>
+</html>
