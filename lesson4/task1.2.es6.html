@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson4 - task 1.2</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  class Post{
+    constructor(author, text, date) {
+      this.author = author;
+      this.text = text;
+      this.date = date;
+    }
+
+    edit(text){
+      this.text = text;
+    }
+
+  }
+
+  class AttachedPost extends Post{
+    highlighted = false;
+
+    makeTextHighlighted(text){
+      this.highlighted = true;
+    }
+  }
+
+
+  let post1 = new Post('Маргарет Этвуд', 'Орикс', '2003-05-01');
+  post1.edit('Орикс и коростель')
+  console.log(post1);
+
+  let post2 = new AttachedPost('Мопассан', 'Милый', '1885-01-01');
+  post2.edit('Милый друг');
+  post2.makeTextHighlighted();
+  console.log(post2);
+
+</script>
+
+</body>
+</html>
